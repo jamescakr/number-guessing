@@ -4,15 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Number Guessing Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>number guessing game</h1>
-    <div id="result-area"> result </div>
-    <input type="number" id="user-input">
-    <button id="play-button">Go!</button>
+    <div class="container">
+        <img src="https://image.winudf.com/v2/image1/Y29tLnB1enpsZS5udW1iZXJzLmJsb2Nrcy5tZXJnZS5tYXRoX3NjcmVlbl8wXzE3MDYwMDI1MjZfMDg2/screen-0.jpg?fakeurl=1&type=.jpg"
+            alt="Game Image">
+        <h1>Number Guessing Game</h1>
+        <input type="text" id="user-input" placeholder="Enter a number between 1 and 100">
+        <button id="play-button">Play</button>
+        <button id="reset-button">Reset</button>
+        <div id="result-area"></div>
+        <div id="chance-area">5 chances left</div>
+    </div>
     <script src="main.js"></script>
 </body>
 
