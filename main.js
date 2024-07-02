@@ -19,7 +19,7 @@ function pickRandomNum() {
 }
 
 function play() {
-  let userValue = userInput.value;
+  let userValue = parseInt(userInput.value);
 
   if (userValue < 1 || userValue > 100) {
     resultArea.textContent = "number has to be between 1 and 100";
@@ -34,38 +34,39 @@ function play() {
   chanceArea.textContent = `you have ${chances} chances left`;
 
   if (userValue < randomNum) {
-    resultArea.textContent = "Up";
+    resultArea.textContent = "Up ⏫️⏫️⏫️";
   } else if (userValue > randomNum) {
-    resultArea.textContent = "Down";
-  } else {
-    resultArea.textContent = "Congrats!";
-    chanceArea.textContent = "";
+    resultArea.textContent = "Down ⏬️⏬️⏬️";
+  } else if (userValue === randomNum) {
+    resultArea.textContent = "🏆Congrats🎉!";
+    chanceArea.textContent = "You've got this!!⭐️⭐️⭐️";
     gameOver = true;
   }
 
   history.push(userValue);
   console.log(history);
 
-  if (chances < 1) {
+  if (chances < 1 && userValue !== randomNum) {
     gameOver = true;
     resultArea.textContent = "Try Again";
     chanceArea.textContent = "No chance left...";
   }
 
-  if (gameOver == true) {
+  if (gameOver) {
     playButton.disabled = true;
   }
 }
 
 function reset() {
-  userInput.value = "";
   pickRandomNum();
+  answer.textContent = `Answer : ${randomNum}`;
+  userInput.value = "";
   playButton.disabled = false;
   resultArea.textContent = "Up? or Down?";
   chances = 3;
   chanceArea.textContent = `you have ${chances} chances left`;
   history = [];
-  answer.textContent = `Answer : ${randomNum}`;
+  gameOver = false;
 }
 
 pickRandomNum();
