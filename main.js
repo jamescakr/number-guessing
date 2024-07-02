@@ -47,6 +47,8 @@ function play() {
 
   if (chances < 1) {
     gameOver = true;
+    resultArea.textContent = "Try Again";
+    chanceArea.textContent = "No chance left...";
   }
 
   if (gameOver == true) {
@@ -58,7 +60,7 @@ function reset() {
   userInput.value = "";
   pickRandomNum();
   playButton.disabled = false;
-
+  resultArea.textContent = "Up? or Down?";
   chances = 5;
   chanceArea.textContent = `you have ${chances} chances left`;
   history = [];
