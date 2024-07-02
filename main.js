@@ -1,12 +1,13 @@
-let randomNum = 0;
+let randomNum;
 let playButton = document.getElementById("play-button");
 let userInput = document.getElementById("user-input");
 let resultArea = document.getElementById("result-area");
 let resetButton = document.getElementById("reset-button");
-let chances = 5;
+let chances = 3;
 let gameOver = false;
 let chanceArea = document.getElementById("chance-area");
 let history = [];
+let answer = document.getElementById("answer");
 
 playButton.addEventListener("click", play);
 resetButton.addEventListener("click", reset);
@@ -61,9 +62,11 @@ function reset() {
   pickRandomNum();
   playButton.disabled = false;
   resultArea.textContent = "Up? or Down?";
-  chances = 5;
+  chances = 3;
   chanceArea.textContent = `you have ${chances} chances left`;
   history = [];
+  answer.textContent = `Answer : ${randomNum}`;
 }
 
 pickRandomNum();
+answer.textContent = `Answer : ${randomNum}`;

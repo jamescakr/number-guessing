@@ -119,3 +119,7 @@ button {
   font-size: 18px;
   color: #00796b;
 }
+
+.paddings {
+  padding: 40px;
+}
